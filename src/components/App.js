@@ -48,9 +48,6 @@ function App() {
       ) : (
         "Initializing..."
       )}
-      <footer style={{ textAlign: "center" }}>
-        &copy; {new Date().getFullYear()} nwitter{" "}
-      </footer>
     </>
   );
 }
