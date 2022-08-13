@@ -15,6 +15,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
     if (ok) {
       // 삭제 트윗 경로
       await dbService.doc(`nweets/${nweetObj.id}`).delete();
+      console.log(nweetObj.attachmentUrl);
       await storageService.refFromURL(nweetObj.attachmentUrl).delete();
     }
   };
@@ -61,7 +62,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
           {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} />}
           {isOwner && (
             <>
-              <div class="nweet__actions">
+              <div className="nweet__actions">
                 <span onClick={onDeleteClick}>
                   <FontAwesomeIcon icon={faTrash} />
                 </span>
